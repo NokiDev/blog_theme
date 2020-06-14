@@ -1,11 +1,22 @@
 <header>
-	{{ strings.Repeat ( .Site.Title | len | add 6 ) "=" }}<br>
-	== <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> ==<br>
-	{{ strings.Repeat ( .Site.Title | len | add 6 ) "=" }}
-	<div style="float: right;">{{ .Site.Params.subtitle }}</div><br>
+	(╯°□°)╯︵ uozɐɯɐ - (╯°□°)╯︵ ʞooqǝɔɐɟ  - (╯°□°)╯︵ ǝlddɐ - (╯°□°)╯︵ ǝlƃoooƃ <br>
+	/*{{ strings.Repeat ( .Site.Title | len | add 80 ) "*" }}<br>
+	{{ strings.Repeat (1) "*" }}
+	\name <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a><br>
+	{{ strings.Repeat (1) "*" }}
+	\author {{ .Site.Params.author }}<br>
+	{{ strings.Repeat (1) "*" }}
+	\brief <span>{{ .Site.Params.subtitle }}</span><br>
+	{{ strings.Repeat (1) "*" }}
+	\details <span>{{ .Site.Params.description }}</span><br>
+	{{ strings.Repeat (1) "*" }}
+	\note Source repository is <a href="{{ .Site.Params.repoUrl }}">there</a>
+	<br>{{ strings.Repeat (1) "*" }}
+	If you find any inconsistencies or want to talk please submit an issue :)
+	<br>
+	{{ strings.Repeat ( .Site.Title | len | add 80 ) "*" }}*/
 	<p>
 	<nav>
-			<a href="/"><b>Start</b></a>.
 			{{ with .Site.Menus.main }}
 			{{ range . }}
 			<a href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>.

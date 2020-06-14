@@ -9,9 +9,10 @@
 		{{ end }}
 		
 		<ul>
-		    {{ range .Paginator.Pages }}
+			{{ $paginator := .Paginate (where .RegularPagesRecursive "Type" "in" "posts") }}
+		    {{ range  $paginator.Pages }}
 		    <li>
-				<div class="post-title">
+		        <div class="post-title">
 				{{ if eq $listtitle "Posts" }}
 				    {{ .Date.Format "2006-01-02" }} <a href="{{ .RelPermalink }}">{{.Title }}</a>
 				{{ else }}
