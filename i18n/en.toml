@@ -1,0 +1,11 @@
+[source-location]
+other = "Source repository is available at"
+
+[blog-available]
+other = "Blog available in :"
+
+[issue-info]
+other = "If you find any inconsistencies or want to talk please submit an issue"
+
+[read-this-in]
+other = "Read this in"

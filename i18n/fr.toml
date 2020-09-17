@@ -1,0 +1,11 @@
+[source-location]
+other = "Le code source est disponible sur"
+
+[blog-available]
+other = "Blog disponible en :"
+
+[issue-info]
+other = "Si vous trouvez une coquille ou avez une question n'hésitez pas à créer une Issue"
+
+[read-this-in]
+other = "Lire aussi en"

@@ -10,16 +10,23 @@
 	{{ strings.Repeat (1) "*" }}
 	\details <span>{{ .Site.Params.description }}</span><br>
 	{{ strings.Repeat (1) "*" }}
-	\note Source repository is <a href="{{ .Site.Params.repoUrl }}">there</a>
+	\note {{i18n "source-location"}} <a href="{{ .Site.Params.repoUrl }}">{{ .Site.Params.repoUrl }}</a>
 	<br>{{ strings.Repeat (1) "*" }}
-	If you find any inconsistencies or want to talk please submit an issue :)
+	{{i18n "issue-info"}} :)
 	<br>
+	<nav>
+		{{ strings.Repeat (1) "*" }}
+		{{i18n "blog-available"}} 
+		{{ range $.Site.Home.AllTranslations }}
+		<a href="{{ .Permalink }}"><b>{{ .Language.LanguageName }}</b></a>.
+		{{ end }}
+	</nav>
 	{{ strings.Repeat ( .Site.Title | len | add 80 ) "*" }}*/
 	<p>
 	<nav>
 			{{ with .Site.Menus.main }}
 			{{ range . }}
-			<a href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>.
+			<a href="{{ .URL  | absLangURL | relURL }}"><b>{{ .Name }}</b></a>.
 			{{ end }}
 	</nav>
 	</p>

@@ -2,10 +2,18 @@
 	<main>
 		<article>
 			<h1>{{ .Title }}</h1>
+			<p>
+				{{i18n "read-this-in"}} : 
+				{{range .Translations }}
+				<span>
+					<a href="{{.Permalink}}">{{.Language.LanguageName}}</a>
+				</span>
+				{{end}}
+			</p>
 			<b><time>{{ .Date.Format "02.01.2006 15:04" }}</time></b>
 		       {{ range .Params.tags }}
 		           <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-        	    {{ end }}
+				{{ end }}
 			<div>
 				{{ .Content }}
 			</div>
