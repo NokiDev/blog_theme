@@ -3,11 +3,13 @@
 		<article>
 			<h1>{{ .Title }}</h1>
 			<p>
+				{{if .Translations}}
 				{{i18n "read-this-in"}} : 
-				{{range .Translations }}
-				<span>
-					<a href="{{.Permalink}}">{{.Language.LanguageName}}</a>
-				</span>
+					{{range .Translations }}
+					<span>
+						<a href="{{.Permalink}}">{{.Language.LanguageName}}</a>
+					</span>
+					{{end}}
 				{{end}}
 			</p>
 			<b><time>{{ .Date.Format "02.01.2006 15:04" }}</time></b>
